@@ -358,8 +358,8 @@ library(tidyquant)
 
 # 所需数据
 sdata
-biomass_ts_tk1 <- mydata |> tk_tbl() |> 
-  select(index, DATE, BIOMASS) # 从mydata数据中选择index、DATE和BIOMASS列
+biomass_ts_tk1 <- sdata |> tk_tbl() |> 
+  select(index, DATE, BIOMASS) # 从sdata数据中选择index、DATE和BIOMASS列
 
 # 可视化DATE和BIOMASS的变化
 ggplot(biomass_ts_tk1,aes(x = DATE, y = BIOMASS)) +
@@ -491,7 +491,7 @@ calibrated_tbl |> modeltime_accuracy(test_data) |>
 calibrated_tbl |>
   modeltime_forecast(
     new_data    = test_data,
-    actual_data = biomtk_ts,
+    actual_data = biomass_ts_tk,
     keep_data   = TRUE  ) |>
   plot_modeltime_forecast(
     .facet_ncol         = 2, 
