@@ -491,7 +491,7 @@ calibrated_tbl |> modeltime_accuracy(test_data) |>
 calibrated_tbl |>
   modeltime_forecast(
     new_data    = test_data,
-    actual_data = biomass_ts_tk,
+    actual_data = biomass_ts_tk1,
     keep_data   = TRUE  ) |>
   plot_modeltime_forecast(
     .facet_ncol         = 2, 
